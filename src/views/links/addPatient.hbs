@@ -3,71 +3,161 @@
         <div class="col mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/links/add" method="POST">
-                        <div class="form-row">
-                            <div class="form-group col-md-3">
-                                <label for="fullName">fullName</label>
-                                <input type="email" class="form-control" id="fullName" placeholder="fullName">
+                    <form action="/links/addPatient" method="POST">
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="fullName">
+                                    <label for="fullName">Nombre Paciente</label>
+                                </div>
                             </div>
-                            <div class="form-group col-md-3">
-                                <label for="birthDate">birthDate</label>
-                                <input type="date" class="form-control" id="birthDate" placeholder="birthDate">
-                            </div>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="diagnostic">diagnostic</label>
-                            <input type="text" class="form-control" id="diagnostic" placeholder="diagnostic">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="photoPath">photo</label>
-                            <input type="text" class="form-control" id="photoPath"
-                                placeholder="photo">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-3">
-                                <label for="fullName">fullName</label>
-                                <input type="email" class="form-control" id="fullName" placeholder="fullName">
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="birthDate">birthDate</label>
-                                <input type="date" class="form-control" id="birthDate" placeholder="birthDate">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="date" class="form-control" id="birthDate">
+                                    <label for="birthDate">Fecha Nacimiento</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-3">
-                            <label for="diagnostic">diagnostic</label>
-                            <input type="text" class="form-control" id="diagnostic" placeholder="diagnostic">
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="photoPath">photo</label>
-                            <input type="text" class="form-control" id="photoPath"
-                                placeholder="photo">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-3">
-                                <label for="parentName">parentName</label>
-                                <input type="text" class="form-control" id="parentName" placeholder="parentName">
+
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="diagnostic">
+                                    <label for="diagnostic">Diagnostico</label>
+                                </div>
                             </div>
-                            <div class="form-group col-md-3">
-                                <label for="inputState">State</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Choose...</option>
-                                    <option>...</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control" id="inputZip">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="parentName">
+                                    <label for="parentName">Nombre Padre, Madre o tutor</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
-                                    Check me out
-                                </label>
+
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="parentPhone1">
+                                    <label for="parentPhone1">Telefono Principal</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="parentPhone2">
+                                    <label for="parentPhone2">Telefono Secundario</label>
+                                </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="file" class="form-control" id="photoPath">
+                                    <label for="photoPath">Foto</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="file" class="form-control" id="agreementPath">
+                                    <label for="agreementPath">Consentimiento</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="file" class="form-control" id="dxPath">
+                                    <label for="dxPath">Radiografias</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="file" class="form-control" id="medicalPath">
+                                    <label for="medicalPath">Informe Medico</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="file" class="form-control" id="dxPath">
+                                    <label for="dxPath">Radiografias</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="file" class="form-control" id="privacyPath">
+                                    <label for="privacyPath">Aviso de privacidad</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="socialArea">
+                                    <label for="socialArea">Area Social</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="physicArea">
+                                    <label for="physicArea">Area Fisica</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="feelingArea">
+                                    <label for="feelingArea">Area Afectiva</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="text" class="form-control" id="congnitiveArea">
+                                    <label for="congnitiveArea">Area Cognitiva</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="monta" id="grape" value="option1">
+                            <label class="form-check-label" for="grape">Grapas</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="monta" id="alone" value="option2">
+                            <label class="form-check-label" for="alone">Monta solo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="monta" id="twin" value="option3">
+                            <label class="form-check-label" for="twin">Monta Gemela</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="monta" id="support" value="option4">
+                            <label class="form-check-label" for="support">Soporte</label>
+                        </div>
+
+                        <div class="row g-2 p=2">
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="signature" class="form-control" id="parentSignature">
+                                    <label for="parentSignature">Firma</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group d-grid gap-2">
+                            <button class="btn btn-primary">Crear Paciente</button>
+                        </div>
+
                     </form>
                 </div>
             </div>

@@ -4,24 +4,23 @@ const router =express.Router();
 
 const pool = require('../database');
 
+router.get('/addSession',(req,res) => {
+    res.render('links/addSession');
+});
+
 router.get('/addPatient',(req,res) => {
     res.render('links/addPatient');
 });
 
 router.post('/addPatient',async(req,res) => {
-    const {title,url,description}=req.body;
-    const newLink={
-        title,
-        url,
-        description
-    };
-    await pool.query('INSERT INTO tb_patient set?',[newLink]);
-    req.flash('success','Link Added Succefully');
-    res.redirect('/links');
+    const {fullName}=req.body;
+    console.log(req.body);
+    const newLink={fullName};
+
 });
 
 router.get('/',async(req,res) => {
-    const links = await pool.query('SELECT * FROM links');
+    const links = await pool.query('SELECT * FROM tb_patient');
     console.log(links);
     res.render('links/lists',{links: links});
 });
