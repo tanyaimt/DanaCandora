@@ -3,16 +3,17 @@
         <div class="col mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/links/addPatient" method="POST">
+                    <form action="/links/addSession/{{idSession}}" method="POST">
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <label for="fullName">Numero del paciente:</label>
+                                    <input type="text" class="form-control" id="fullName" value="{{links.fullName}}">
+                                    <label for="fullName">Nombre Paciente</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="terapist" name="terapist">
+                                    <input type="text" class="form-control" id="terapist" value="{{links.terapist}}">
                                     <label for="terapist">Terapeuta</label>
                                 </div>
                             </div>
@@ -21,13 +22,13 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="horseName" name="horseName">
-                                    <label for="horseName">Nombre Caballo</label>
+                                    <input type="text" class="form-control" id="horseName" value="{{links.horseName}}">
+                                    <label for="horseName">Nombre Cabello</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="dogName" name="dogName">
+                                    <input type="text" class="form-control" id="dogName" value="{{links.dogName}}">
                                     <label for="dogName">Nombre Perro</label>
                                 </div>
                             </div>
@@ -36,13 +37,13 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="date" class="form-control" id="sessionDate" name="sessionDate">
-                                    <label for="sessionDate">Fecha Sesion</label>
+                                    <input type="date" class="form-control" id="sessionDate" value="{{links.sessionDate}}">
+                                    <label for="sessionDate">Fecha Session</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="activityName" name="activityName">
+                                    <input type="text" class="form-control" id="activityName" value="{{links.activityName}}">
                                     <label for="activityName">Nombre de la Actividad</label>
                                 </div>
                             </div>
@@ -51,13 +52,13 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="objective" name="objective">
+                                    <input type="text" class="form-control" id="objective" value="{{links.objective}}">
                                     <label for="objective">Objetivo</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="evaluation" name="evaluation">
+                                    <input type="text" class="form-control" id="evaluation" value="{{links.evaluation}}">
                                     <label for="evaluation">Evaluacion</label>
                                 </div>
                             </div>
@@ -66,14 +67,14 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <textarea name="comment" class="form-control" id="parentNote" form="usrform"  name="parentNote"></textarea>
-                                    <label for="parentNote">Nota del padre</label>
+                                    <textarea name="comment" class="form-control" id="parentNote" form="usrform">{{links.parentNote}}</textarea>
+                                    <label for="parentNote">Nota del Padre</label>
                                 </div>
                             </div>
                          </div>
 
                         <div class="form-group d-grid ">
-                            <button class="btn btn-primary">Crear Sesion</button><br><br>
+                            <button class="btn btn-primary">Modificar Sesion</button><br><br>
                         </div>
 
                     </form>

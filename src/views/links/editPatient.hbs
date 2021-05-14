@@ -3,18 +3,18 @@
         <div class="col mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/links/addPatient" method="POST">
+                    <form action="/links/editPatient/{{links.idPatient}}" method="POST">
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="fullName" name="fullName">
+                                    <input type="text" class="form-control" id="fullName" name="fullName" value="{{links.fullName}}">
                                     <label for="fullName">Nombre Paciente</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="date" class="form-control" id="birthDate" name="birthDate">
-                                    <label for="birthDate">Fecha Nacimiento</label>
+                                    <input type="date" class="form-control" id="birthDate" name="birthDate" value="{{links.birthDate}}" disabled>
+                                    <label for="birthDate">Fecha Nacimiento:{{links.birthDate}}</label>
                                 </div>
                             </div>
                         </div>
@@ -22,13 +22,13 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="diagnostic" name="diagnostic">
+                                    <input type="text" class="form-control" id="diagnostic" name="diagnostic" value="{{links.diagnostic}}">
                                     <label for="diagnostic">Diagnostico</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="parentName" name="parentName">
+                                    <input type="text" class="form-control" id="parentName" name="parentName" value="{{links.parentName}}">
                                     <label for="parentName">Nombre Padre, Madre o tutor</label>
                                 </div>
                             </div>
@@ -37,13 +37,13 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="parentPhone1" name="parentPhone1">
+                                    <input type="text" class="form-control" id="parentPhone1" name="parentPhone1" value="{{links.parentPhone1}}">
                                     <label for="parentPhone1">Telefono Principal</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="parentPhone2" name="parentPhone2">
+                                    <input type="text" class="form-control" id="parentPhone2" name="parentPhone2" value="{{links.parentPhone2}}">
                                     <label for="parentPhone2">Telefono Secundario</label>
                                 </div>
                             </div>
@@ -52,14 +52,14 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="photoPath" name="photoPath">
+                                    <input type="text" class="form-control" id="photoPath" name="photoPath" value="{{links.photoPath}}">
                                     <label for="photoPath">Foto</label>
                                 </div>
                             </div>
 
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="agreementPath" name="agreementPath">
+                                    <input type="text" class="form-control" id="agreementPath" name="agreementPath" value="{{links.agreementPath}}">
                                     <label for="agreementPath">Consentimiento</label>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="medicalRecord" name="medicalRecord">
+                                    <input type="text" class="form-control" id="medicalRecord" name="medicalRecord" value="{{links.medicalRecord}}">
                                     <label for="medicalRecord">Informe Medico</label>
                                 </div>
                             </div>
@@ -77,13 +77,13 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="dxPath" name="dxPath">
+                                    <input type="text" class="form-control" id="dxPath" name="dxPath" value="{{links.dxPath}}">
                                     <label for="dxPath">Radiografias</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="privacyPath" name="privacyPath">
+                                    <input type="text" class="form-control" id="privacyPath" name="privacyPath" value="{{links.privacyPath}}">
                                     <label for="privacyPath">Aviso de privacidad</label>
                                 </div>
                             </div>
@@ -94,13 +94,13 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="socialArea" name="socialArea">
+                                    <input type="text" class="form-control" id="socialArea" name="socialArea" value="{{links.socialArea}}">
                                     <label for="socialArea">Area Social</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="physicArea" name="physicArea">
+                                    <input type="text" class="form-control" id="physicArea" name="physicArea" value="{{links.physicArea}}">
                                     <label for="physicArea">Area Fisica</label>
                                 </div>
                             </div>
@@ -109,39 +109,30 @@
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="feelingArea" name="feelingArea">
+                                    <input type="text" class="form-control" id="feelingArea" name="feelingArea" value="{{links.feelingArea}}">
                                     <label for="feelingArea">Area Afectiva</label>
                                 </div>
                             </div>
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="text" class="form-control" id="congnitiveArea" name="congnitiveArea">
+                                    <input type="text" class="form-control" id="congnitiveArea" name="congnitiveArea" value="{{links.congnitiveArea}}">
                                     <label for="congnitiveArea">Area Cognitiva</label>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="monta" id="grape" value="grapas">
-                            <label class="form-check-label" for="grape">Grapas</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="monta" id="alone" value="solo">
-                            <label class="form-check-label" for="alone">Monta solo</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="monta" id="twin" value="gemela">
-                            <label class="form-check-label" for="twin">Monta Gemela</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="monta" id="support" value="soporte">
-                            <label class="form-check-label" for="support">Soporte</label>
-                        </div>
+
 
                         <div class="row g-2 p=2">
                             <div class="col-md">
                                 <div class="p-2 form-floating">
-                                    <input type="signature" class="form-control" id="parentSignature" name="parentSignature">
+                                    <input type="text" class="form-control" id="monta" name="monta" value="{{links.monta}}">
+                                    <label for="monta">Monta</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="p-2 form-floating">
+                                    <input type="signature" class="form-control" id="parentSignature" name="parentSignature" value="{{links.parentSignature}}">
                                     <label for="parentSignature">Firma</label>
                                 </div>
                             </div>
@@ -149,7 +140,7 @@
                         </div>
 
                         <div class="form-group d-grid gap-2">
-                            <button class="btn btn-primary">Crear Paciente</button><br><br>
+                            <button class="btn btn-primary">Actualizar Paciente</button><br><br>
                         </div>
                     </form>
                 </div>

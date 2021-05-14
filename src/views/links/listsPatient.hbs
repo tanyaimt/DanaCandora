@@ -1,0 +1,30 @@
+<div class="container p-3">
+    <div class="row">
+        <h1>Pacientes</h1>
+        {{#each links}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="car d-grid gap-2">
+                        <a href="" target="_blank">
+                            <h3 class="card-title test-uppercase">
+                            </h3>
+                        </a>
+                        <p class="m-3"></p>
+                        <p >{{fullName}}<br>{{diagnostic}}</p>
+                        <p></p>
+                        <a href="/links/deletePatient/{{idPatient}}" class="btn btn-danger btn-lg">Eliminar</a>
+                        <a href="/links/editPatient/{{idPatient}}" class="btn btn-secondary btn-lg">Modificar</a>
+                        <a href="/links/session/{{idPatient}}" class="btn btn-primary btn-lg">Ver Sesiones</a>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="col-md-3 mx-auto">
+                <div class="card card-body text-center">
+                    <p>There are no Patients created yet</p>
+                    <a href="/links/addPatient">Create One!</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div><br><br>
